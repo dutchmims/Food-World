@@ -36,7 +36,6 @@ ALLOWED_HOSTS = [
     'foodworld-bc79ebf162e0.herokuapp.com', 'localhost',
     ]
 
-
 # Application definition
 
 INSTALLED_APPS = [
