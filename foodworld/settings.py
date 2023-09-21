@@ -13,8 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 
 import os
-from django.contrib.messages import constants as messages
 import dj_database_url
+from django.contrib.messages import constants as messages
 if os.path.isfile("env.py"):
     import env
 
@@ -69,7 +69,7 @@ MESSAGE_TAGS = {
         messages.WARNING: 'alert-warning',
         messages.ERROR: 'alert-danger',
     }
-
+    
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
