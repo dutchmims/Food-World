@@ -1,7 +1,9 @@
+/* Global Styles */
 body {
     background-color: #F9FAFC;
 }
 
+/* Typography */
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
@@ -17,6 +19,7 @@ body {
     font-weight: 300;
 }
 
+/* Background Colors */
 .light-bg {
     background-color: #fff;
 }
@@ -29,11 +32,13 @@ body {
     background-color: #F9FAFC;
 }
 
+/* Cards */
 .card {
     border: none;
     background-color: transparent;
 }
 
+/* Image Container */
 .image-container {
     position: relative;
 }
@@ -46,12 +51,14 @@ body {
     background-color: #23BBBB;
 }
 
+/* Author Styles */
 .author {
     color: white;
     margin: 4px;
     text-transform: uppercase;
 }
 
+/* Masthead */
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -86,6 +93,7 @@ body {
     z-index: 100;
 }
 
+/* Links and Buttons */
 .post-link {
     text-decoration: none;
     color: #445261;
@@ -128,6 +136,7 @@ body {
     text-decoration: underline;
 }
 
+/* Like Button */
 .btn-like {
     color: #E84610;
     border: none;
