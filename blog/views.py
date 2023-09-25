@@ -4,13 +4,11 @@ from django.http import HttpResponseRedirect
 from .models import Post, Tag
 from .forms import CommentForm
 
-
 class PostList(generic.ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"
     paginate_by = 6
-
 
 class PostDetail(View):
 
@@ -65,6 +63,17 @@ class PostDetail(View):
             },
         )
 
+def posts_by_tag(request, tag_name):
+    tag = get_object_or_404(Tag, name=tag_name)
+    posts = tag.posts.filter(status=1).order_by("-created_on")
+    return render(
+        request,
+        "posts_by_tag.html",
+        {
+            "tag": tag,
+            "posts": posts,
+        },
+    )
 
 class PostLike(View):
     
