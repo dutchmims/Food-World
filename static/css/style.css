@@ -1,57 +1,96 @@
-/* Global Styles */
+/* Define variables at the top for easy customization */
 :root {
-    --background-color: #F9FAFC;
-    --text-color: #4A4A4F;
-    --accent-color: #E84610;
+    /* Global Styles */
+    --bg-color: #F9FAFC;
+
+    /* Typography */
+    --brand-font-family: 'Lato', sans-serif;
+    --brand-font-size: 1.8rem;
+    --brand-font-weight: 700;
+    --brand-color: #FF6B6B; /* Funky red color */
+
+    --red-o-color: #FF6B6B;
+
+    --thin-font-weight: 300;
+
+    /* Background Colors */
+    --light-bg-color: #fff;
+    --dark-bg-color: #445261;
+    --main-bg-color: #F9FAFC;
+
+    /* Like Button */
+    --like-btn-color: #FF6B6B;
+    --like-btn-hover-color: #FF3D3D; /* Darker red on hover */
 }
 
+/* Global Styles */
 body {
-    background-color: var(--background-color);
-    color: var(--text-color);
+    background-color: var(--bg-color);
 }
 
 /* Typography */
 .brand {
-    font-family: Lato, sans-serif;
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text-color);
+    font-family: var(--brand-font-family);
+    font-size: var(--brand-font-size);
+    font-weight: var(--brand-font-weight);
+    color: var(--brand-color);
+}
+
+.red-o {
+    color: var(--red-o-color);
+}
+
+.thin {
+    font-weight: var(--thin-font-weight);
 }
 
 /* Background Colors */
 .light-bg {
-    background-color: #fff;
+    background-color: var(--light-bg-color);
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: var(--dark-bg-color);
 }
 
 .main-bg {
-    background-color: var(--background-color);
+    background-color: var(--main-bg-color);
 }
 
-/* Links and Buttons */
-.post-link {
-    text-decoration: none;
-    color: var(--text-color);
-}
-
-.post-link:hover,
-.page-link {
-    color: var(--accent-color);
-}
+/* ... (other styles) */
 
 /* Like Button */
 .btn-like {
-    color: var(--accent-color);
+    color: var(--like-btn-color);
     border: none;
     background: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Smooth color transition */
 }
 
 .btn-like:hover,
 .btn-like:active {
-    color: var(--accent-color);
+    color: var(--like-btn-hover-color);
     background: transparent;
     border: none;
+}
+
+/* Default styles */
+
+@media (max-width: 768px) {
+    /* Styles for screens up to 768px wide (e.g., tablets) */
+    .navbar-brand .brand {
+        font-size: 1.5rem;
+    }
+    
+    /* Add more responsive styles here */
+}
+
+@media (max-width: 576px) {
+    /* Styles for screens up to 576px wide (e.g., mobile phones) */
+    .navbar-brand .brand {
+        font-size: 1.2rem;
+    }
+    
+    /* Add more responsive styles here */
 }

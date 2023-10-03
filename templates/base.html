@@ -1,61 +1,71 @@
 {% load static %}
 
 <!DOCTYPE html>
-<html class="h-100">
-
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A food blog site allowing users to share all things food">
+    <meta name="keywords" content="food, blog, posts, meat, desserts, pasta, soups">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/favicon.png' %}">
     <title>{% block title %}Foodworld{% endblock title %}</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+
+    <!-- External CSS Stylesheets -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://kit.fontawesome.com/7009ec3e44.js" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    
+    <script src="https://kit.fontawesome.com/7009ec3e44.js" crossorigin="anonymous"></script>
 
-     <!-- Additional CSS Styles -->
-     <style>
+    <!-- Internal CSS Styles -->
+    <style>
         /* Global Styles */
         body {
             background-color: #F9FAFC;
-            color: #4A4A4F; /* Text color */
-            font-family: 'Lato', sans-serif;
+            color: #4A4A4F;
+            font-family: 'Roboto', sans-serif; /* Use a contemporary font */
         }
 
         /* Brand */
         .brand {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #E84610; /* Brand color */
+            color: #E84610;
+            font-family: 'Pacifico', cursive; /* Change to the desired font */
         }
 
         /* Navbar */
         .navbar {
-            background-color: #fff; /* Navbar background color */
-            border-bottom: 2px solid #23BBBB; /* Navbar border color */
+            background-color: #fff;
+            border-bottom: 2px solid #23BBBB;
         }
 
         .navbar-brand {
-            color: #E84610; /* Brand color */
+            color: #E84610;
             font-weight: bold;
             font-size: 1.5rem;
         }
 
         .navbar-toggler-icon {
-            background-color: #E84610; /* Toggler icon color */
+            background-color: #E84610;
         }
 
         .navbar-nav .nav-link {
-            color: #4A4A4F; /* Navbar link color */
+            color: #4A4A4F;
             font-weight: 600;
         }
 
         .navbar-nav .nav-link.active {
-            color: #E84610; /* Active link color */
+            color: #E84610;
         }
 
         /* Alerts */
@@ -65,14 +75,14 @@
         }
 
         .alert-primary {
-            background-color: #23BBBB; /* Primary alert background color */
-            color: #fff; /* Primary alert text color */
+            background-color: #23BBBB;
+            color: #fff;
         }
 
         /* Footer */
         .footer {
-            background-color: #445261; /* Footer background color */
-            color: #fff; /* Footer text color */
+            background-color: #445261;
+            color: #fff;
             text-align: center;
             padding: 20px;
         }
@@ -80,16 +90,19 @@
         .footer i {
             font-size: 24px;
             margin: 0 10px;
-            color: #E84610; /* Social media icon color */
+            color: #E84610;
         }
     </style>
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">Foodworld</span></a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <span class="brand">Foodworld</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -100,16 +113,16 @@
                         <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
                     </li>
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
                     {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
                     {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">
@@ -118,41 +131,57 @@
             </div>
         </div>
     </nav>
+
+    <!-- Alerts -->
     <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
-                <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
-                    {{ message | safe }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
+                    <div class="alert {{ message.tags }} alert-dismissible fade show" id="msg" role="alert">
+                        {{ message | safe }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
                 {% endfor %}
             </div>
         </div>
     </div>
 
+    <!-- Main Content -->
     <main class="flex-shrink-0 main-bg">
-
         {% block content %}
-        <!-- Content Goes here -->
+        <!-- Content Goes Here -->
         {% endblock content %}
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto">
-        <p class="m-0">Made by James Healy for Project 4</p>
-        <p class="m-0">Follow us: <i class="fab fa-facebook-square"></i>
-            <i class="fab fa-twitter-square"></i>
-            <i class="fab fa-instagram-square"></i>
-            <i class="fab fa-youtube-square"></i></p>
+    <footer class="text-center page-footer">
+        <div class="container p-4">
+            <section>
+                <a href="https://www.facebook.com/" target="_blank" class="btn m-1 scl-media">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" class="btn m-1 scl-media">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://twitter.com/" target="_blank" class="btn m-1 scl-media">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                <a href="https://www.pinterest.co.uk/" target="_blank" class="btn m-1 scl-media">
+                    <i class="fa-brands fa-pinterest"></i>
+                </a>
+                <a href="https://www.linkedin.com/feed/" target="_blank" class="btn m-1 scl-media">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <br>
+                <span class="copyright"><small>&copy; Copyright 2023: Foodworld by James Healy</small></span>
+            </section>
+        </div>
     </footer>
-    <script>
-        setTimeout(function () {
-            let messages = document.getElementById('msg');
-            let alert = new bootstrap.Alert(messages);
-            alert.close();
-        }, 2000);
-    </script>
-</body>
 
+    <!-- Bootstrap JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
+    </script>
+
+</body>
 </html>

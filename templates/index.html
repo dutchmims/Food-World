@@ -1,17 +1,53 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-
 <style>
+    /* Modern Typography */
     body {
-        background-color: var(--background-color);
-        color: var(--text-color);
+        font-family: 'Roboto', sans-serif; /* Use a contemporary font */
     }
 
-    a {
-        color: var(--link-color);
+    /* Hero Section Styles */
+    .hero-section {
+        background-image: url('{% static "images/hero-bg.jpg" %}');
+        background-size: cover;
+        background-position: center;
+        color: #fff;
+        padding: 100px 0;
+        text-align: center;
+    }
+
+    .hero-title {
+        font-size: 3rem;
+        font-weight: 700;
+        margin-bottom: 20px;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+
+    /* Add hover effect to blog post cards */
+    .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        transition: transform 0.2s, box-shadow 0.2s;
     }
 </style>
+
+<!-- Hero Section -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <h1 class="hero-title">Discover the Culinary World</h1>
+                <p class="hero-subtitle">Explore the Tastiest Creations</p>
+                <a href="#latest-recipes" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
 
 <div class="container-fluid">
     <div class="row">
