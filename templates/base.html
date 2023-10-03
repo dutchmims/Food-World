@@ -16,14 +16,80 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+     <!-- Additional CSS Styles -->
+     <style>
+        /* Global Styles */
+        body {
+            background-color: #F9FAFC;
+            color: #4A4A4F; /* Text color */
+            font-family: 'Lato', sans-serif;
+        }
+
+        /* Brand */
+        .brand {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #E84610; /* Brand color */
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #fff; /* Navbar background color */
+            border-bottom: 2px solid #23BBBB; /* Navbar border color */
+        }
+
+        .navbar-brand {
+            color: #E84610; /* Brand color */
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #E84610; /* Toggler icon color */
+        }
+
+        .navbar-nav .nav-link {
+            color: #4A4A4F; /* Navbar link color */
+            font-weight: 600;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: #E84610; /* Active link color */
+        }
+
+        /* Alerts */
+        .alert {
+            margin: 10px 0;
+            border: none;
+        }
+
+        .alert-primary {
+            background-color: #23BBBB; /* Primary alert background color */
+            color: #fff; /* Primary alert text color */
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #445261; /* Footer background color */
+            color: #fff; /* Footer text color */
+            text-align: center;
+            padding: 20px;
+        }
+
+        .footer i {
+            font-size: 24px;
+            margin: 0 10px;
+            color: #E84610; /* Social media icon color */
+        }
+    </style>
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
 
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">Foodworld</span>
-              </a>
+        <div class="container">
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">Foodworld</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -45,7 +111,6 @@
                         <a class="nav-link" href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
-
                 </ul>
                 <span class="navbar-text text-muted">
                     The misadventures of a food blogger
@@ -74,12 +139,12 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by James Healy for Project 4</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
+    <footer class="footer mt-auto">
+        <p class="m-0">Made by James Healy for Project 4</p>
+        <p class="m-0">Follow us: <i class="fab fa-facebook-square"></i>
+            <i class="fab fa-twitter-square"></i>
+            <i class="fab fa-instagram-square"></i>
+            <i class="fab fa-youtube-square"></i></p>
     </footer>
     <script>
         setTimeout(function () {
