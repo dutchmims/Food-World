@@ -3,6 +3,14 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
+# Import the Tag model here
+class Tag(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
@@ -20,6 +28,7 @@ class Post(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
+    tags = models.ManyToManyField(Tag, related_name='posts', blank=True)
 
     class Meta:
         ordering = ["-created_on"]
