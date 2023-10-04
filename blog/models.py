@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 
-# Import the Tag model here
 class Tag(models.Model):
     name = models.CharField(max_length=50, unique=True)
 
@@ -12,6 +11,11 @@ class Tag(models.Model):
 
 
 STATUS = ((0, "Draft"), (1, "Published"))
+
+
+class PublishedPostManager(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=1)
 
 
 class Post(models.Model):
@@ -29,6 +33,9 @@ class Post(models.Model):
     likes = models.ManyToManyField(
         User, related_name='blogpost_like', blank=True)
     tags = models.ManyToManyField(Tag, related_name='posts', blank=True)
+
+    objects = models.Manager()  # The default manager
+    published = PublishedPostManager()  # Custom manager for published posts
 
     class Meta:
         ordering = ["-created_on"]

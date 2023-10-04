@@ -10,7 +10,7 @@
 
     /* Hero Section Styles */
     .hero-section {
-        background-image: url('{% static "images/hero-bg.jpg" %}');
+        background-image: url('{% static "images/foodiesfeed.com_exotic-spices.jpg" %}');
         background-size: cover;
         background-position: center;
         color: #fff;
@@ -22,10 +22,12 @@
         font-size: 3rem;
         font-weight: 700;
         margin-bottom: 20px;
+        color: #fff; /* Set the text color to white or another visible color */
     }
 
     .hero-subtitle {
         font-size: 1.5rem;
+        color: #fff; /* Set the text color to white or another visible color */
     }
 
     /* Add hover effect to blog post cards */
@@ -34,37 +36,18 @@
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         transition: transform 0.2s, box-shadow 0.2s;
     }
+    
 </style>
 
-<section class="intro-container">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-10 mt-5 offset-md-1 intro-text">
-                <h2 class="intro-title">The Best Food Blog on the Planet</h2>
-                <br>
-                <div class="intro-p">
-                    <p>Welcome to Foodworld   <i class="fa-solid fa-bowl-food"></i></p>
-                    <p>
-                    </p>
-                    <p>
-                    </p>
-                    <p>
-                    </p>
-                </div>
-                <br>
-            </div>
-        </div>
-    </div>
-</section>
-
 <!-- Hero Section -->
-<section class="hero-section">
+<section class="hero-section text-center">
     <div class="container">
         <div class="row">
-            <div class="col-md-8 offset-md-2">
+            <div class="col-md-12">
+                <!-- Add background color for text -->
                 <h1 class="hero-title">Discover the Culinary World</h1>
                 <p class="hero-subtitle">Explore the Tastiest Creations</p>
-                <a href="#latest-recipes" class="btn btn-primary">Get Started</a>
+                <a href="#latest-recipes" class="btn btn-primary btn-lg">Get Started</a>
             </div>
         </div>
     </div>
@@ -72,7 +55,6 @@
 
 <div class="container-fluid">
     <div class="row">
-
         <!-- Blog Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
@@ -80,13 +62,9 @@
                 <div class="col-md-4">
                     <div class="card mb-4">
                         <div class="card-body">
+                            <!-- Keep the first image container -->
                             <div class="image-container">
-                                {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top"
-                                    src="https://codeinstitute.s3.amazonaws.com/fullstack/blog/default.jpg">
-                                {% else %}
-                                <img class="card-img-top" src=" {{ post.featured_image.url }}">
-                                {% endif %}
+                                <img class="card-img-top" src="{% static 'images/victoria-shes-UC0HZdUitWY-unsplash.jpg' %}">
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
                                 </div>
@@ -106,7 +84,6 @@
             <div class="row">
                 {% endif %}
                 {% endfor %}
-
             </div>
         </div>
     </div>
@@ -118,7 +95,6 @@
             {% endif %}
             {% if page_obj.has_next %}
             <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-
             {% endif %}
         </ul>
     </nav>
