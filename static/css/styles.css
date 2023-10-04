@@ -1,19 +1,15 @@
+/* Global Styles */
 :root {
-    /* Global Styles */
     --bg-color: #F9FAFC;
-    --text-color: #4A4A4F; /* Updated text color */
+    --text-color: #4A4A4F; 
     --font-family: 'Lato', sans-serif;
     --brand-font-size: 1.8rem;
     --brand-font-weight: 700;
     --brand-color: #FF6B6B;
     --thin-font-weight: 300;
-
-    /* Colors */
     --red-o-color: #FF6B6B;
     --like-btn-color: #FF6B6B;
     --like-btn-hover-color: #FF3D3D;
-
-    /* Background Colors */
     --light-bg-color: #fff;
     --dark-bg-color: #445261;
     --main-bg-color: #F9FAFC;
@@ -22,16 +18,16 @@
 /* Global Styles */
 body {
     background-color: var(--bg-color);
-    color: var(--text-color); /* Updated text color */
+    color: var(--text-color); 
     font-family: var(--font-family);
-    line-height: 1.6; /* Improved readability with line-height */
+    line-height: 1.6; 
 }
 
 /* Header and Navigation Menu Styles */
 .site-header {
-    background-color: #fff; /* Background color for the header */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a shadow to the header */
-    padding: 20px 0; /* Adjust the padding as needed */
+    background-color: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    padding: 20px 0;
 }
 
 .navbar {
@@ -39,14 +35,8 @@ body {
     padding-bottom: 0;
 }
 
-.navbar-brand {
-    font-size: 24px; /* Adjust the font size */
-    font-weight: bold;
-    color: #333; /* Text color for the brand/logo */
-}
-
 .navbar-toggler-icon {
-    border-color: #333; /* Color of the toggler icon */
+    border-color: #333;
 }
 
 .navbar-toggler:focus {
@@ -54,13 +44,13 @@ body {
 }
 
 .navbar-nav .nav-link {
-    font-size: 18px; /* Adjust the font size */
-    color: #333; /* Text color for navigation links */
-    margin-right: 20px; /* Adjust the spacing between links */
+    font-size: 18px; 
+    color: #333; 
+    margin-right: 20px; 
 }
 
 .navbar-nav .nav-link:hover {
-    color: #FF6B6B; /* Text color for links on hover */
+    color: #FF6B6B; 
 }
 
 /* Typography */
@@ -73,23 +63,6 @@ body {
 
 .red-o {
     color: var(--red-o-color);
-}
-
-.thin {
-    font-weight: var(--thin-font-weight);
-}
-
-/* Background Colors */
-.light-bg {
-    background-color: var(--light-bg-color);
-}
-
-.dark-bg {
-    background-color: var(--dark-bg-color);
-}
-
-.main-bg {
-    background-color: var(--main-bg-color);
 }
 
 /* Like Button */
@@ -108,24 +81,17 @@ body {
     border: none;
 }
 
-
+/* Recipe-related styles (for recipe pages) */
 #latest-recipes {
     background-color: #f9f9f9; 
     padding: 80px 0; 
 }
 
-.section-title {
-    font-size: 32px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.recipe-title {
+.section-title, .recipe-title {
     font-size: 24px;
     font-weight: bold;
-    margin-top: 20px;
-    color: #333; 
+    color: #333;
+    margin: 0;
 }
 
 .recipe-description {
@@ -134,7 +100,7 @@ body {
     color: #666; 
 }
 
-.recipe-image-container {
+.recipe-image-container, .recipe-card-container {
     height: 200px; 
     overflow: hidden;
 }
@@ -158,7 +124,6 @@ body {
     transform: scale(0.5);
 }
 
-
 .recipe-card .recipe-image {
     height: 100px; 
     overflow: hidden; 
@@ -176,9 +141,83 @@ body {
     transform: scale(1.05); 
 }
 
-
 .recipe-card-container + .recipe-card-container {
     margin-left: 15px; 
+}
+
+/* Style the sign-in and sign-out buttons */
+.btn-signup.login-btn,
+.btn-signup.logout-btn {
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+}
+
+.btn-signup.login-btn {
+    background-color: #dc3545; 
+}
+
+.btn-signup.login-btn:hover {
+    background-color: #c82333; 
+}
+
+.btn-signup.logout-btn {
+    background-color: #FF6B6B; 
+}
+
+.btn-signup.logout-btn:hover {
+    background-color: #FF3D3D; 
+}
+
+/* Apply styles to the logout page content */
+.container.logout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Center content vertically */
+    background-color: var(--main-bg-color);
+}
+
+.col-md-8.logout-col {
+    background-color: #fff; 
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px; /* Adjust the maximum width as needed */
+    display: inline-block; /* Added this line to make the container inline-block */
+}
+
+.logout-col h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333; 
+}
+
+.logout-col p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666; 
+}
+
+/* Style the sign-out button */
+.logout-col .btn-signup.logout-btn {
+    background-color: #FF6B6B; 
+    color: #fff; 
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    display: inline-block; /* Added this line to make the button inline-block */
+}
+
+.logout-col .btn-signup.logout-btn:hover {
+    background-color: #FF3D3D; 
 }
 
 /* For smaller screens, stack the recipe cards vertically */
@@ -189,7 +228,7 @@ body {
     }
 
     .recipe-card-container + .recipe-card-container {
-        margin-left: 0; /* Remove spacing between columns */
-        margin-top: 15px; /* Add spacing between rows */
+        margin-left: 0; 
+        margin-top: 15px; 
     }
 }
