@@ -41,9 +41,44 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <!-- Add background color for text -->
                 <h1 class="hero-title">Discover the Culinary World</h1>
                 <p class="hero-subtitle">Explore the Tastiest Creations</p>
-                <a href="#latest-recipes" class="btn btn-primary btn-lg">Get Started</a>
+                <a href="#latest-recipes" class="btn btn-primary btn-lg" id="scroll-to-latest-recipes">Get Started</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Latest Recipes Section -->
+<section id="latest-recipes">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-title">Latest Recipes</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="recipe-card">
+                    <img src="recipe1.jpg" alt="Recipe 1">
+                    <h3 class="recipe-title">Recipe 1</h3>
+                    <p class="recipe-description">Description of Recipe 1.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="recipe-card">
+                    <img src="recipe2.jpg" alt="Recipe 2">
+                    <h3 class="recipe-title">Recipe 2</h3>
+                    <p class="recipe-description">Description of Recipe 2.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="recipe-card">
+                    <img src="recipe3.jpg" alt="Recipe 3">
+                    <h3 class="recipe-title">Recipe 3</h3>
+                    <p class="recipe-description">Description of Recipe 3.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -99,6 +134,25 @@
     </nav>
     {% endif %}
 </div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // Get the "Get Started" button element
+        var scrollToLatestRecipesButton = document.getElementById("scroll-to-latest-recipes");
+    
+        // Get the target element to scroll to (the "latest-recipes" section)
+        var latestRecipesSection = document.getElementById("latest-recipes");
+    
+        // Add a click event listener to the button
+        scrollToLatestRecipesButton.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default behavior of the anchor link
+    
+            // Scroll smoothly to the target element
+            latestRecipesSection.scrollIntoView({ behavior: "smooth" });
+        });
+    });
+    </script>
 
 <script>
     function setDynamicStyles(textColor, bgColor, linkColor) {
