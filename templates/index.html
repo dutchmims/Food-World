@@ -34,6 +34,90 @@
         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
         transition: transform 0.2s, box-shadow 0.2s;
     }
+
+    #latest-recipes {
+    background-color: #f9f9f9; 
+    padding: 80px 0; 
+}
+
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.recipe-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #333; 
+}
+
+.recipe-description {
+    font-size: 16px;
+    margin-top: 10px;
+    color: #666; 
+}
+
+.recipe-image-container {
+    height: 200px; 
+    overflow: hidden;
+}
+
+/* Recipe card container */
+.recipe-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 15px; /* Add spacing between cards */
+}
+
+/* Recipe card */
+.recipe-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+    height: 100%; /* Add this line to ensure all recipe cards have the same height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.recipe-card .recipe-image {
+    height: 200px; /* Set a fixed height for recipe card images */
+    overflow: hidden; /* Hide any overflowing content */
+}
+
+.recipe-card img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05); /* Increase the size of the card on hover */
+}
+
+/* Adjust spacing between columns */
+.recipe-card-container + .recipe-card-container {
+    margin-left: 15px; /* Add spacing between columns */
+}
+
+/* For smaller screens, stack the recipe cards vertically */
+@media (max-width: 768px) {
+    .recipe-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-card-container + .recipe-card-container {
+        margin-left: 0; /* Remove spacing between columns */
+        margin-top: 15px; /* Add spacing between rows */
+    }
+}
+
 </style>
 
 <!-- Hero Section -->
@@ -50,7 +134,6 @@
     </div>
 </section>
 
-    <!-- Latest Recipes Section -->
 <section id="latest-recipes">
     <div class="container">
         <div class="row">
@@ -59,31 +142,41 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="recipe-card">
-                    <img src="recipe1.jpg" alt="Recipe 1">
+                    <div class="recipe-image recipe-image-container">
+                        <img src="static/images/oyster-250876_640.jpg" alt="Recipe 1">
+                    </div>
                     <h3 class="recipe-title">Recipe 1</h3>
                     <p class="recipe-description">Description of Recipe 1.</p>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <div class="recipe-card">
-                    <img src="recipe2.jpg" alt="Recipe 2">
+                    <div class="recipe-image recipe-image-container">
+                        <img src="static/images/salmon-6353898_640.jpg" alt="Recipe 1">
+                    </div>
                     <h3 class="recipe-title">Recipe 2</h3>
                     <p class="recipe-description">Description of Recipe 2.</p>
                 </div>
             </div>
-            <div class="col-md-4">
+        </div>
+        <div class="row">
+            <div class="col-md-6">
                 <div class="recipe-card">
-                    <img src="recipe3.jpg" alt="Recipe 3">
+                    <div class="recipe-image recipe-image-container">
+                        <img src="static/images/shrimp-1502724_640.jpg" alt="Recipe 1">
+                    </div>
                     <h3 class="recipe-title">Recipe 3</h3>
                     <p class="recipe-description">Description of Recipe 3.</p>
                 </div>
             </div>
+            <!-- Add more recipe cards here if needed -->
         </div>
     </div>
 </section>
 
+    
 
 <div class="container-fluid">
     <div class="row">

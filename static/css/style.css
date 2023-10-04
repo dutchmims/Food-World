@@ -108,48 +108,88 @@ body {
     border: none;
 }
 
-/* Style for the "Latest Recipes" section */
+
 #latest-recipes {
-    background-color: var(--light-bg-color);
-    padding: 80px 0;
+    background-color: #f9f9f9; 
+    padding: 80px 0; 
 }
 
 .section-title {
-    font-size: 36px; /* Increased section title font size */
+    font-size: 32px;
     font-weight: bold;
     margin-bottom: 40px;
-    color: var(--text-color);
-}
-
-.recipe-card {
-    background-color: var(--light-bg-color);
-    border: 1px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    transition: transform 0.3s ease;
-    border-radius: 8px; /* Added border-radius for a rounded look */
-}
-
-.recipe-card:hover {
-    transform: scale(1.05);
+    color: #333;
 }
 
 .recipe-title {
-    font-size: 28px; /* Increased recipe title font size */
+    font-size: 24px;
     font-weight: bold;
     margin-top: 20px;
-    color: var(--text-color);
+    color: #333; 
 }
 
 .recipe-description {
-    font-size: 18px; /* Increased recipe description font size */
+    font-size: 16px;
     margin-top: 10px;
-    color: #666;
+    color: #666; 
+}
+
+.recipe-image-container {
+    height: 200px; 
+    overflow: hidden;
+}
+
+/* Recipe card container */
+.recipe-card-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    padding: 15px; 
+}
+
+/* Recipe card */
+.recipe-card {
+    text-align: center;
+    transition: transform 0.3s ease;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transform: scale(0.5);
+}
+
+
+.recipe-card .recipe-image {
+    height: 100px; 
+    overflow: hidden; 
 }
 
 .recipe-card img {
     max-width: 100%;
-    height: auto;
+    max-height: 100%;
+    object-fit: cover;
     border: 1px solid #ddd;
     border-radius: 8px;
+}
+
+.recipe-card:hover {
+    transform: scale(1.05); 
+}
+
+
+.recipe-card-container + .recipe-card-container {
+    margin-left: 15px; 
+}
+
+/* For smaller screens, stack the recipe cards vertically */
+@media (max-width: 768px) {
+    .recipe-card-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .recipe-card-container + .recipe-card-container {
+        margin-left: 0; /* Remove spacing between columns */
+        margin-top: 15px; /* Add spacing between rows */
+    }
 }
