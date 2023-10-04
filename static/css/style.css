@@ -63,9 +63,6 @@ body {
     color: #FF6B6B; /* Text color for links on hover */
 }
 
-/* Add more styles as needed */
-
-
 /* Typography */
 .brand {
     font-size: var(--brand-font-size);
