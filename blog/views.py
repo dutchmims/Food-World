@@ -1,7 +1,8 @@
+from django.core.paginator import Paginator
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
-from .models import Post, Tag  # Import the Tag model
+from .models import Post, Tag
 from .forms import CommentForm
 
 
@@ -74,16 +75,25 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+
+
+
 def tag_posts(request, tag_name):
     # Retrieve posts associated with the specified tag
     tag = get_object_or_404(Tag, name=tag_name)
     posts = tag.posts.filter(status=1).order_by("-created_on")
+
+    # Paginate the posts
+    page_number = request.GET.get('page')
+    posts_per_page = 6  # Adjust the number of posts per page as needed
+    paginator = Paginator(posts, posts_per_page)
+    paginated_posts = paginator.get_page(page_number)
 
     return render(
         request,
         "tag_posts.html",
         {
             "tag": tag,
-            "posts": posts,
+            "posts": paginated_posts,
         },
     )
