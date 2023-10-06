@@ -75,9 +75,6 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-
-
-
 def tag_posts(request, tag_name):
     # Retrieve posts associated with the specified tag
     tag = get_object_or_404(Tag, name=tag_name)
