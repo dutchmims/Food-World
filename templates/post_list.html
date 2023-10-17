@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Blog Posts</h1>
+  <ul>
+    {% for post in posts %}
+      <li>
+        <h2><a href="{% url 'blog:post_detail' slug=post.slug %}">{{ post.title }}</a></h2>
+        <p>Published by {{ post.author }} on {{ post.pub_date }}</p>
+      </li>
+    {% empty %}
+      <li>No blog posts yet.</li>
+    {% endfor %}
+  </ul>
+  <a href="{% url 'blog:create_blog_post' %}">Create a new blog post</a>
+{% endblock %}
