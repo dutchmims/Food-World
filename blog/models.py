@@ -34,8 +34,8 @@ class Post(models.Model):
         User, related_name='blogpost_like', blank=True)
     tags = models.ManyToManyField(Tag, related_name='posts', blank=True)
 
-    objects = models.Manager()  # The default manager
-    published = PublishedPostManager()  # Custom manager for published posts
+    objects = models.Manager()
+    published = PublishedPostManager()
 
     class Meta:
         ordering = ["-created_on"]

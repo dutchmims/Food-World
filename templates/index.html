@@ -191,8 +191,7 @@
                     <p class="recipe-description">
                         * 1kg Irish langoustines
                         * juice of 1 lemon
-           
-                        FOR THE GARLIC BUTTER
+                        <br>
                         * 125g butter
                         * 1 large garlic clove, crushed
                         * 1 tbsp finely chopped parsley
@@ -214,7 +213,6 @@
                         * 3 tablespoons vegetable oil
                         * 2 eggs 
                         * 2 cloves garlic
-                        * 200g of beef steak
                         * 3 fresh chilli's or dried chilli flake
                         * 3 cups of Chinese cabbege
                         * 1 carrot 
@@ -227,14 +225,9 @@
                         * 1/4 teaspoon white pepper
                         * ½ teaspoon sesame oil
                         * 2 teaspoons soy sauce
-                        * 1 spring onion
-                       
-                        <!-- Add more ingredients as needed -->
                     </p>
                 </div>
             </div>
-            
-            <!-- Add more recipe cards here if needed -->
         </div>
     </div>
 </section>
@@ -245,37 +238,44 @@
     <div class="row">
 
         <!-- Blog Entries Column -->
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for post in post_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                <img class="card-img-top" src="{% static 'images/chad-montano-eeqbbemH9-c-unsplash.jpg' %}">
-                                <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
-                                </div>
-                            </div>
-                            <a href="{% url 'post_detail' post.slug  %}" class="post-link">
-                                <h2 class="card-title">{{ post.title }}</h2>
-                                <p class="card-text">{{ post.excerpt }}</p>
-                            </a>
-                            <hr />
-                            <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
-                                {{ post.number_of_likes }}</p>
+<div class="col-12 mt-3 left">
+    <div class="row">
+        {% for post in post_list %}
+        <div class="col-md-3">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="image-container">
+                        <!-- Check if the featured image is 'placeholder' -->
+                        {% if "placeholder" in post.featured_image.url %}
+                            <!-- If it's 'placeholder', use the default image -->
+                            <img class="card-img-top" src="{% static 'images/default-image.jpg' %}">
+                        {% else %}
+                            <!-- If it's not 'placeholder', use the actual featured image URL -->
+                            <img class="card-img-top" src="{{ post.featured_image.url }}">
+                        {% endif %}
+                        <div class="image-flash">
+                            <p class="author">Author: {{ post.author }}</p>
                         </div>
                     </div>
+                    <a href="{% url 'post_detail' post.slug %}" class="post-link">
+                        <h2 class="card-title">{{ post.title }}</h2>
+                        <p class="card-text">{{ post.excerpt }}</p>
+                    </a>
+                    <hr />
+                    <p class="card-text text-muted h6">{{ post.created_on }} <i class="far fa-heart"></i>
+                        {{ post.number_of_likes }}</p>
                 </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
             </div>
         </div>
+        {% if forloop.counter|divisibleby:3 %}
     </div>
+    <div class="row">
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
+</div>
+
     {% if is_paginated %}
     <nav aria-label="Page navigation">
         <ul class="pagination justify-content-center">
