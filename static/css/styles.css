@@ -145,6 +145,92 @@ body {
     margin-left: 15px; 
 }
 
+/* Typography for blog posts */
+h1.post-title {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+p.post-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 1rem;
+    color: #777;
+}
+
+/* Blog post text */
+p.card-text {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* Blog post interactions */
+div.row > div > strong {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #777;
+}
+
+div.row > div > strong .btn-like {
+    color: #FF6B6B;
+}
+
+div.row > div > strong .btn-like:hover,
+div.row > div > strong .btn-like:active {
+    color: #FF3D3D;
+}
+
+/* Blog post comments section */
+h3 {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+div.comments p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: #555;
+}
+
+div.comments p.comment-body {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: #444;
+}
+
+/* "Leave a comment" section */
+h3.comment-section-title {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+p.posting-message {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 1rem;
+    color: #777;
+}
+
+button.btn.btn-lg {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: 1.2rem;
+    background-color: #007BFF;
+    color: #fff;
+}
+
 /* Style the sign-in and sign-out buttons */
 .btn-signup.login-btn,
 .btn-signup.logout-btn {
@@ -178,7 +264,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Center content vertically */
+    min-height: 100vh;
     background-color: var(--main-bg-color);
 }
 
@@ -188,8 +274,8 @@ body {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    max-width: 400px; /* Adjust the maximum width as needed */
-    display: inline-block; /* Added this line to make the container inline-block */
+    max-width: 400px;
+    display: inline-block;
 }
 
 .logout-col h3 {
@@ -213,7 +299,7 @@ body {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease; 
-    display: inline-block; /* Added this line to make the button inline-block */
+    display: inline-block; 
 }
 
 .logout-col .btn-signup.logout-btn:hover {
