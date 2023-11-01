@@ -306,6 +306,14 @@ button.btn.btn-lg {
     background-color: #FF3D3D; 
 }
 
+/* Content Columns - 4 columns for larger screens */
+@media (min-width: 992px) {
+    .col-md-3 {
+      flex: 0 0 25%; /* Equal width for each column */
+      max-width: 25%;
+    }
+  }
+
 /* For smaller screens, stack the recipe cards vertically */
 @media (max-width: 768px) {
     .recipe-card-container {
