@@ -3,7 +3,29 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Post, Tag
-from .forms import CommentForm
+from .forms import CommentForm, PostForm, PostUpdateForm
+
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
+class PostCreate(CreateView):
+    model = Post
+    form_class = PostForm
+    template_name = 'post_create.html'
+    success_url = reverse_lazy('home')
+
+class PostUpdate(UpdateView):
+    model = Post
+    form_class = PostUpdateForm
+    template_name = 'post_update.html'
+
+    def get_success_url(self):
+        return reverse_lazy('post_detail', args=[self.object.slug])
+
+class PostDelete(DeleteView):
+    model = Post
+    success_url = reverse_lazy('home')
+    template_name = 'post_confirm_delete.html'
 
 
 class PostList(generic.ListView):
@@ -21,7 +43,7 @@ class PostDetail(View):
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
-        tags = post.tags.all()  # Get tags associated with this post
+        tags = post.tags.all()
 
         return render(
             request,
@@ -32,7 +54,7 @@ class PostDetail(View):
                 "commented": False,
                 "liked": liked,
                 "comment_form": CommentForm(),
-                "tags": tags,  # Pass the tags to the template context
+                "tags": tags,
             },
         )
 
@@ -76,13 +98,10 @@ class PostLike(View):
 
 
 def tag_posts(request, tag_name):
-    # Retrieve posts associated with the specified tag
     tag = get_object_or_404(Tag, name=tag_name)
     posts = tag.posts.filter(status=1).order_by("-created_on")
-
-    # Paginate the posts
     page_number = request.GET.get('page')
-    posts_per_page = 6  # Adjust the number of posts per page as needed
+    posts_per_page = 6
     paginator = Paginator(posts, posts_per_page)
     paginated_posts = paginator.get_page(page_number)
 
