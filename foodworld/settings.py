@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    '8000-dutchmims-foodworld-rd5s96yfzw8.ws-eu105.gitpod.io',
+    '8000-dutchmims-foodworld-rd5s96yfzw8.ws-eu106.gitpod.io',
     'foodworld-bc79ebf162e0.herokuapp.com', 'localhost',
     ]
 
