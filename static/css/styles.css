@@ -30,29 +30,6 @@ body {
     padding: 20px 0;
 }
 
-.navbar {
-    padding-top: 0;
-    padding-bottom: 0;
-}
-
-.navbar-toggler-icon {
-    border-color: #333;
-}
-
-.navbar-toggler:focus {
-    outline: none;
-}
-
-.navbar-nav .nav-link {
-    font-size: 18px; 
-    color: #333; 
-    margin-right: 20px; 
-}
-
-.navbar-nav .nav-link:hover {
-    color: #FF6B6B; 
-}
-
 /* Typography */
 .brand {
     font-size: var(--brand-font-size);
@@ -87,64 +64,6 @@ body {
     padding: 80px 0; 
 }
 
-.section-title, .recipe-title {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333;
-    margin: 0;
-}
-
-.recipe-description {
-    font-size: 16px;
-    margin-top: 10px;
-    color: #666; 
-}
-
-.recipe-image-container, .recipe-card-container {
-    height: 200px; 
-    overflow: hidden;
-}
-
-/* Recipe card container */
-.recipe-card-container {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    padding: 15px; 
-}
-
-/* Recipe card */
-.recipe-card {
-    text-align: center;
-    transition: transform 0.3s ease;
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transform: scale(0.5);
-}
-
-.recipe-card .recipe-image {
-    height: 100px; 
-    overflow: hidden; 
-}
-
-.recipe-card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: cover;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-}
-
-.recipe-card:hover {
-    transform: scale(1.05); 
-}
-
-.recipe-card-container + .recipe-card-container {
-    margin-left: 15px; 
-}
-
 /* Typography for blog posts */
 h1.post-title {
     font-family: 'Lato', sans-serif;
@@ -160,7 +79,6 @@ p.post-subtitle {
     color: #777;
 }
 
-/* Blog post text */
 p.card-text {
     font-family: 'Lato', sans-serif;
     font-weight: normal;
@@ -192,16 +110,23 @@ h3 {
     font-weight: normal;
     font-size: 1.5rem;
     color: #333;
+    margin-bottom: 15px;
 }
 
-div.comments p {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    font-size: 1rem;
-    color: #555;
+.comments-list {
+    list-style: none;
+    padding: 0;
 }
 
-div.comments p.comment-body {
+.comment-box {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+}
+
+.comment-details {
     font-family: 'Lato', sans-serif;
     font-weight: normal;
     font-size: 1.2rem;
@@ -214,21 +139,87 @@ h3.comment-section-title {
     font-weight: normal;
     font-size: 1.5rem;
     color: #333;
+    margin-bottom: 15px;
 }
 
-p.posting-message {
+#comment-form {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#comment-form input,
+#comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
     font-family: 'Lato', sans-serif;
-    font-weight: normal;
     font-size: 1rem;
-    color: #777;
 }
 
-button.btn.btn-lg {
-    font-family: 'Lato', sans-serif;
-    font-weight: normal;
-    font-size: 1.2rem;
+#comment-form button {
+    padding: 10px 20px;
     background-color: #007BFF;
     color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#comment-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Apply styles to the logout page content */
+.container.logout-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: var(--main-bg-color);
+}
+
+.col-md-8.logout-col {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 400px;
+    display: inline-block;
+}
+
+.logout-col h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.logout-col p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+/* Style the sign-out button */
+.logout-col .btn-signup.logout-btn {
+    background-color: #FF6B6B;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+
+.logout-col .btn-signup.logout-btn:hover {
+    background-color: #FF3D3D;
 }
 
 /* Style the sign-in and sign-out buttons */
@@ -258,61 +249,13 @@ button.btn.btn-lg {
     background-color: #FF3D3D; 
 }
 
-/* Apply styles to the logout page content */
-.container.logout-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background-color: var(--main-bg-color);
-}
-
-.col-md-8.logout-col {
-    background-color: #fff; 
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 400px;
-    display: inline-block;
-}
-
-.logout-col h3 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333; 
-}
-
-.logout-col p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #666; 
-}
-
-/* Style the sign-out button */
-.logout-col .btn-signup.logout-btn {
-    background-color: #FF6B6B; 
-    color: #fff; 
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease; 
-    display: inline-block; 
-}
-
-.logout-col .btn-signup.logout-btn:hover {
-    background-color: #FF3D3D; 
-}
-
 /* Content Columns - 4 columns for larger screens */
 @media (min-width: 992px) {
     .col-md-3 {
       flex: 0 0 25%; /* Equal width for each column */
       max-width: 25%;
     }
-  }
+}
 
 /* For smaller screens, stack the recipe cards vertically */
 @media (max-width: 768px) {
