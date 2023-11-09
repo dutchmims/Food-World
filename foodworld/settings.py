@@ -90,6 +90,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'foodworld.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -105,6 +106,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'foodworld.wsgi.application'
 

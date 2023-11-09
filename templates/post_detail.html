@@ -7,93 +7,92 @@
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 
   <div class="container">
-        <div class="row g-0">
-          <div class="col-md-6 masthead-text">
-            <h1 class="post-title">{{ post.title }}</h1>
-            <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
-          </div>
-          <div class="d-none d-md-block col-md-6 masthead-image">
-            <img src="{% if "placeholder" in post.featured_image.url %}{% static 'images/default-image.jpg' %}{% else %}{{ post.featured_image.url }}{% endif %}" width="100%">
-          </div>
-        </div>
-    
-        <div class="row">
-          <div class="col-md-3 mb-4 mt-3">
-            <div class="card left top">
-              <div class="card-body">
-                <p class="card-text">
-                  {{ post.content | safe }}
-                </p>
-                <div class="row">
-                  <div class="col-6">
-                    <strong>
-                      {% if user.is_authenticated %}
+    <div class="row g-0">
+      <div class="col-md-6 masthead-text">
+        <h1 class="post-title">{{ post.title }}</h1>
+        <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+      </div>
+      <div class="d-none d-md-block col-md-6 masthead-image">
+        <img src="{% if 'placeholder' in post.featured_image.url %}{% static 'images/default-image.jpg' %}{% else %}{{ post.featured_image.url }}{% endif %}" width="100%">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3 mb-4 mt-3">
+        <div class="card left top">
+          <div class="card-body">
+            <p class="card-text">
+              {{ post.content | safe }}
+            </p>
+            <div class="row">
+              <div class="col-6">
+                <strong>
+                  {% if user.is_authenticated %}
+                    <a href="{% url 'post_like' post.slug %}">
+                      {% if liked %}
+                        <span class="text-danger"><i class="fas fa-heart"></i></span>
                       {% else %}
                         <span class="text-secondary"><i class="far fa-heart"></i></span>
                       {% endif %}
-                      <span class="text-secondary">{{ post.number_of_likes }}</span>
-                    </strong>
-                  </div>
-                  <div class="col-6">
-                    {% with comments.count as total_comments %}
-                      <strong class="text-secondary"><i class="far fa-comments"></i>{{ total_comments }}</strong>
-                    {% endwith %}
-                  </div>
-                </div>
+                    </a>
+                  {% endif %}
+                  <span class="text-secondary">{{ post.number_of_likes }}</span>
+                </strong>
               </div>
-            </div>
-          </div>
-    
-          <div class="col-md-3 mb-4 mt-3">
-            <div class="card left top">
-              <div class="card-body">
-              </div>
-            </div>
-          </div>
-    
-          <div class="col-md-3 mb-4 mt-3">
-            <div class="card left top">
-              <div class="card-body">
-              </div>
-            </div>
-          </div>
-    
-          <div class="col-md-3 mb-4 mt-3">
-            <div class="card left top">
-              <div class="card-body">
+              <div class="col-6">
+                <strong class="text-secondary">
+                  <i class="far fa-comments"></i>{{ comments.count }}
+                </strong>
               </div>
             </div>
           </div>
         </div>
-    
-        <div class="row">
-          <div class="col">
-            <hr>
-          </div>
-        </div>
+      </div>
+      <!-- Additional content (you can add specific information here) -->
+    </div>
 
-   <!-- Comments section -->
-<div class="row">
-  <div class="col-md-8 card mb-4 mt-3">
-    <h3>Comments</h3>
-    <div class="comments-list">
-      {% for comment in comments %}
-        <div class="comment-box">
-          <p class="comment-details"><strong>{{ comment.name }}:</strong> {{ comment.body }}</p>
+    <div class="row">
+      <div class="col">
+        <hr>
+      </div>
+    </div>
+
+    <!-- Comments section -->
+    <div class="row">
+      <div class="col-md-8 card mb-4 mt-3">
+        <h3>Comments</h3>
+        <div class="comments-list">
+          {% for comment in comments %}
+            <div class="comment-box">
+              <p class="comment-details"><strong>{{ comment.name }}:</strong> {{ comment.body }}</p>
+            </div>
+          {% empty %}
+            <p>No comments yet.</p>
+          {% endfor %}
         </div>
-      {% empty %}
-        <p>No comments yet.</p>
-      {% endfor %}
+      </div>
+      <!-- Comment submission form -->
+      <div class="col-md-4 card mb-4 mt-3">
+        <h3>Leave a Comment</h3>
+        <form method="post" action="{% url 'post_detail' post.slug %}">
+          {% csrf_token %}
+          {{ comment_form.as_p }}
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Message display -->
+    <div class="row">
+      <div class="col">
+        {% if messages %}
+          <ul class="messages">
+            {% for message in messages %}
+              <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </div>
     </div>
   </div>
-  <!-- post_detail content -->
-<div class="col-md-4 card mb-4 mt-3">
-  <h3>Leave a Comment</h3>
-  <form method="post" action="{% url 'post_detail' post.slug %}">
-      {% csrf_token %}
-      {{ comment_form.as_p }}
-      <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
-
 {% endblock content %}
