@@ -1,12 +1,14 @@
 from django.contrib import messages
 from django.shortcuts import render, get_object_or_404
-from django.views import View
+from django.views import View, generic
 from django.http import HttpResponseRedirect
 from django.core.paginator import Paginator
+from django.urls import reverse, reverse_lazy
 from .models import Post, Tag
 from .forms import CommentForm, PostForm, PostUpdateForm
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from django.urls import reverse
+from django.views.generic import ListView
+
 
 class PostDetail(View):
     def get(self, request, slug, *args, **kwargs):
