@@ -97,25 +97,40 @@ class CommentCreate(View):
 
         return redirect('post_detail', slug=slug)
 
+from django.http import JsonResponse
+from django.shortcuts import get_object_or_404
+from django.views import View
+
 class PostLike(View):
     def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
+        try:
+            post = get_object_or_404(Post, slug=slug)
             liked = False
-        else:
-            post.likes.add(request.user)
-            liked = True
 
-        response_data = {
-            'liked': liked,
-            'like_count': post.likes.count(),
-        }
+            if post.likes.filter(id=request.user.id).exists():
+                post.likes.remove(request.user)
+            else:
+                post.likes.add(request.user)
+                liked = True
 
-        return JsonResponse(response_data)
+            response_data = {
+                'success': True,
+                'liked': liked,
+                'like_count': post.likes.count(),
+            }
+
+            return JsonResponse(response_data, status=200)
+
+        except Exception as e:
+            response_data = {
+                'success': False,
+                'error_message': str(e),
+            }
+
+            return JsonResponse(response_data, status=400)
 
 
-class TagPosts(ListView):  # Renamed to follow convention
+class TagPosts(ListView): 
     model = Post
     template_name = "tag_posts.html"
     paginate_by = 6
@@ -125,13 +140,15 @@ class TagPosts(ListView):  # Renamed to follow convention
         tag = get_object_or_404(Tag, name=tag_name)
         return tag.posts.filter(status=1).order_by("-created_on")
 
-class PostCreate(LoginRequiredMixin, CreateView):  # Added LoginRequiredMixin
+
+class PostCreate(LoginRequiredMixin, CreateView):
     model = Post
     form_class = PostForm
     template_name = 'post_create.html'
     success_url = reverse_lazy('home')
 
-class PostUpdate(LoginRequiredMixin, UpdateView):  # Added LoginRequiredMixin
+
+class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
     form_class = PostUpdateForm
     template_name = 'post_update.html'
@@ -139,10 +156,12 @@ class PostUpdate(LoginRequiredMixin, UpdateView):  # Added LoginRequiredMixin
     def get_success_url(self):
         return reverse('post_detail', args=[self.object.slug])
 
-class PostDelete(LoginRequiredMixin, DeleteView):  # Added LoginRequiredMixin
+
+class PostDelete(LoginRequiredMixin, DeleteView):
     model = Post
     success_url = reverse_lazy('home')
     template_name = 'post_confirm_delete.html'
+
 
 class PostList(ListView):
     model = Post
