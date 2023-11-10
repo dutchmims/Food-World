@@ -71,15 +71,15 @@
           {% endfor %}
         </div>
       </div>
-      <!-- Comment submission form -->
-      <div class="col-md-4 card mb-4 mt-3">
-        <h3>Leave a Comment</h3>
-        <form method="post" action="{% url 'post_detail' post.slug %}">
+
+    <!-- Comment submission form -->
+    <div class="col-md-4 card mb-4 mt-3">
+      <h3>Leave a Comment</h3>
+        <form method="post" action="{% url 'comment_create' post.slug %}">  <!-- Update form action to 'comment_create' -->
           {% csrf_token %}
           {{ comment_form.as_p }}
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-      </div>
     </div>
 
     <!-- Message display -->

@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'blog',
 ]
 
+
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
@@ -88,6 +89,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
 ROOT_URLCONF = 'foodworld.urls'
 
 
@@ -106,6 +108,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 
 WSGI_APPLICATION = 'foodworld.wsgi.application'

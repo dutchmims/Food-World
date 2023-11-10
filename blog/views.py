@@ -1,13 +1,33 @@
 from django.contrib import messages
-from django.shortcuts import render, get_object_or_404
-from django.views import View, generic
-from django.http import HttpResponseRedirect
-from django.core.paginator import Paginator
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views import View
+from django.http import HttpResponseRedirect, JsonResponse
 from django.urls import reverse, reverse_lazy
-from .models import Post, Tag
-from .forms import CommentForm, PostForm, PostUpdateForm
+from django.core.paginator import Paginator
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from .models import Post, Tag
+from .forms import CommentForm, PostForm, PostUpdateForm
+
+
+class PostLike(View):
+    def post(self, request, slug, *args, **kwargs):
+        post = get_object_or_404(Post, slug=slug)
+        if post.likes.filter(id=request.user.id).exists():
+            post.likes.remove(request.user)
+            liked = False
+        else:
+            post.likes.add(request.user)
+            liked = True
+
+        response_data = {
+            'liked': liked,
+            'like_count': post.likes.count(),
+        }
+
+        return JsonResponse(response_data)
+
 
 
 class PostDetail(View):
@@ -61,42 +81,57 @@ class PostDetail(View):
                 },
             )
 
+class CommentCreate(View):
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comment_form = CommentForm(data=request.POST)
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+
+            messages.success(request, 'Your comment has been submitted successfully!')
+        else:
+            messages.error(request, 'There was an error with your comment submission. Please try again.')
+
+        return redirect('post_detail', slug=slug)
 
 class PostLike(View):
     def post(self, request, slug, *args, **kwargs):
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)
+            liked = False
         else:
             post.likes.add(request.user)
-        return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+            liked = True
+
+        response_data = {
+            'liked': liked,
+            'like_count': post.likes.count(),
+        }
+
+        return JsonResponse(response_data)
 
 
-def tag_posts(request, tag_name):
-    tag = get_object_or_404(Tag, name=tag_name)
-    posts = tag.posts.filter(status=1).order_by("-created_on")
-    page_number = request.GET.get('page')
-    posts_per_page = 6
-    paginator = Paginator(posts, posts_per_page)
-    paginated_posts = paginator.get_page(page_number)
+class TagPosts(ListView):  # Renamed to follow convention
+    model = Post
+    template_name = "tag_posts.html"
+    paginate_by = 6
 
-    return render(
-        request,
-        "tag_posts.html",
-        {
-            "tag": tag,
-            "posts": paginated_posts,
-        },
-    )
+    def get_queryset(self):
+        tag_name = self.kwargs['tag_name']
+        tag = get_object_or_404(Tag, name=tag_name)
+        return tag.posts.filter(status=1).order_by("-created_on")
 
-class PostCreate(CreateView):
+class PostCreate(LoginRequiredMixin, CreateView):  # Added LoginRequiredMixin
     model = Post
     form_class = PostForm
     template_name = 'post_create.html'
     success_url = reverse_lazy('home')
 
-
-class PostUpdate(UpdateView):
+class PostUpdate(LoginRequiredMixin, UpdateView):  # Added LoginRequiredMixin
     model = Post
     form_class = PostUpdateForm
     template_name = 'post_update.html'
@@ -104,14 +139,12 @@ class PostUpdate(UpdateView):
     def get_success_url(self):
         return reverse('post_detail', args=[self.object.slug])
 
-
-class PostDelete(DeleteView):
+class PostDelete(LoginRequiredMixin, DeleteView):  # Added LoginRequiredMixin
     model = Post
     success_url = reverse_lazy('home')
     template_name = 'post_confirm_delete.html'
 
-
-class PostList(generic.ListView):
+class PostList(ListView):
     model = Post
     queryset = Post.objects.filter(status=1).order_by("-created_on")
     template_name = "index.html"

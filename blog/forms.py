@@ -3,10 +3,11 @@ from .models import Comment, Post
 
 class CommentForm(forms.ModelForm):
     body = forms.CharField(label='', widget=forms.Textarea(attrs={'placeholder': 'Your comment', 'rows': 4}))
+    email = forms.EmailField(label='Email', required=False, widget=forms.EmailInput(attrs={'placeholder': 'Your email'}))
 
     class Meta:
         model = Comment
-        fields = ('body',)
+        fields = ('name', 'email', 'body')
 
 class PostForm(forms.ModelForm):
     class Meta:
