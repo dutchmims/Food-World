@@ -13,96 +13,6 @@ from .forms import CommentForm, PostForm, PostUpdateForm
 
 class PostLike(View):
     def post(self, request, slug, *args, **kwargs):
-        post = get_object_or_404(Post, slug=slug)
-        if post.likes.filter(id=request.user.id).exists():
-            post.likes.remove(request.user)
-            liked = False
-        else:
-            post.likes.add(request.user)
-            liked = True
-
-        response_data = {
-            'liked': liked,
-            'like_count': post.likes.count(),
-        }
-
-        return JsonResponse(response_data)
-
-
-
-class PostDetail(View):
-    def get(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
-        liked = post.likes.filter(id=request.user.id).exists() if request.user.is_authenticated else False
-        tags = post.tags.all()
-
-        comment_form = CommentForm()
-
-        return render(
-            request,
-            "post_detail.html",
-            {
-                "post": post,
-                "comments": comments,
-                "commented": False,
-                "liked": liked,
-                "comment_form": comment_form,
-                "tags": tags,
-            },
-        )
-
-    def post(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
-        liked = post.likes.filter(id=request.user.id).exists() if request.user.is_authenticated else False
-
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.save()
-
-            messages.success(request, 'Your comment has been submitted successfully!')
-            return HttpResponseRedirect(reverse('post_detail', args=[slug]))
-        else:
-            messages.error(request, 'There was an error with your comment submission. Please try again.')
-            return render(
-                request,
-                "post_detail.html",
-                {
-                    "post": post,
-                    "comments": comments,
-                    "commented": True,
-                    "comment_form": comment_form,
-                    "liked": liked
-                },
-            )
-
-class CommentCreate(View):
-    def post(self, request, slug, *args, **kwargs):
-        queryset = Post.objects.filter(status=1)
-        post = get_object_or_404(queryset, slug=slug)
-        comment_form = CommentForm(data=request.POST)
-        if comment_form.is_valid():
-            comment = comment_form.save(commit=False)
-            comment.post = post
-            comment.save()
-
-            messages.success(request, 'Your comment has been submitted successfully!')
-        else:
-            messages.error(request, 'There was an error with your comment submission. Please try again.')
-
-        return redirect('post_detail', slug=slug)
-
-from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
-from django.views import View
-
-class PostLike(View):
-    def post(self, request, slug, *args, **kwargs):
         try:
             post = get_object_or_404(Post, slug=slug)
             liked = False
@@ -128,6 +38,70 @@ class PostLike(View):
             }
 
             return JsonResponse(response_data, status=400)
+
+
+class PostDetail(View):
+    def get(self, request, slug, *args, **kwargs):
+        post, comments, liked, tags, comment_form = self.get_post_details(slug, request)
+        return render(request, "post_detail.html", {
+            "post": post,
+            "comments": comments,
+            "commented": False,
+            "liked": liked,
+            "comment_form": comment_form,
+            "tags": tags,
+        })
+
+    def post(self, request, slug, *args, **kwargs):
+        post, comments, liked, comment_form = self.get_post_details(slug, request)
+
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+
+            messages.success(request, 'Your comment has been submitted successfully!')
+            return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+        else:
+            messages.error(request, 'There was an error with your comment submission. Please try again.')
+            return render(request, "post_detail.html", {
+                "post": post,
+                "comments": comments,
+                "commented": True,
+                "comment_form": comment_form,
+                "liked": liked
+            })
+
+    def get_post_details(self, slug, request):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comments = post.comments.filter(approved=True).order_by("-created_on")
+        liked = post.likes.filter(id=request.user.id).exists() if request.user.is_authenticated else False
+        tags = post.tags.all()
+        comment_form = CommentForm(data=request.POST)
+        return post, comments, liked, tags, comment_form
+
+
+class CommentCreate(View):
+    def post(self, request, slug, *args, **kwargs):
+        post, comment_form = self.get_post_and_form(slug, request)
+        
+        if comment_form.is_valid():
+            comment = comment_form.save(commit=False)
+            comment.post = post
+            comment.save()
+
+            messages.success(request, 'Your comment has been submitted successfully!')
+        else:
+            messages.error(request, 'There was an error with your comment submission. Please try again.')
+
+        return redirect('post_detail', slug=slug)
+
+    def get_post_and_form(self, slug, request):
+        queryset = Post.objects.filter(status=1)
+        post = get_object_or_404(queryset, slug=slug)
+        comment_form = CommentForm(data=request.POST)
+        return post, comment_form
 
 
 class TagPosts(ListView): 
