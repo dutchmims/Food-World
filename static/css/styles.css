@@ -174,7 +174,7 @@ h3.comment-section-title {
     background-color: #0056b3;
 }
 
-/* Apply styles to the logout page content */
+/* Style the logout page content */
 .container.logout-container {
     display: flex;
     flex-direction: column;
@@ -252,7 +252,7 @@ h3.comment-section-title {
 /* Content Columns - 4 columns for larger screens */
 @media (min-width: 992px) {
     .col-md-3 {
-      flex: 0 0 25%; /* Equal width for each column */
+      flex: 0 0 25%;
       max-width: 25%;
     }
 }
