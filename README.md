@@ -21,6 +21,8 @@
 
 ### Project Overview
 
+Foodworld is a food blog website which allows users explore blogs, recipes, stories and interact with a community of likeminded people. One can comment on a blog, add a recipe or leave information for other users to read and comment themselves. It’s the beginning of an online community of people who love food and want to delve into recipes, ideas or just leave details about their culinary experiences. If users want to share their own cooking tips or find tips, they can. It’s an open platform for users to share recipes, ideas, culinary experiences, to show off their own creations or maybe a stunning meal in a far off part of the world. The site is all about food, people, peoples love for food and how it evokes feelings and great memories. Comments can be posted by any registered users, but administration will review all and any comment to ensure proper standards and etiquette.
+
 ### User Stories/Goals
 
 ### Features
