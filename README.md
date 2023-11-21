@@ -13,10 +13,9 @@
 4. UX/UI
 5. Testing 
 6. Technologies Used
-7. 
-8. Deployment 
-9. Citation of ALL sources(code, images, text)
-10. Known Bugs 
+7. Deployment
+8. Known Bugs 
+9. Citation of all sources(code, images, text)
 
 
 ### Project Overview
@@ -58,6 +57,26 @@ I created a list of user stories to assist in the development and implementation
   
 ### Features
 
+## Header
+
+The header is showing the website name and logo on the left, and the links to 'Home', 'Register', and 'Login'. On the right it has "The Misadventures of a foodblogger"
+
+## Footer
+
+The footer is showing 5 social media links and the website copyright at the bottom left.
+
+## Homepage
+
+* The home page includes a photograph with text. This lets the viewer know what the website is about and whats coming next. The image is vibrant and inviting. There's a CTA (a blue box with text that say "Get Started") Once clicked on it bring the user down to the "Latest Recipes" section.
+
+## Register
+
+* 
+
+## Login
+
+* 
+
 ### UX/UI  
 - Design
   - Main colours used
@@ -70,8 +89,7 @@ I created a list of user stories to assist in the development and implementation
 <img width="190" alt="Screenshot 2023-11-08 at 20 03 35" src="https://github.com/dutchmims/Food-World/assets/119881922/5ecf3e76-88da-4b3b-a983-4f533e514ccc">
 <img width="99" alt="Screenshot 2023-11-08 at 20 03 52" src="https://github.com/dutchmims/Food-World/assets/119881922/d1f7168e-9d86-4375-a11d-09933bff6b8f">
 
-
-
+## Testing
 
 ## Technologies and Languages Used
 
@@ -92,9 +110,42 @@ I created a list of user stories to assist in the development and implementation
 - LightHouse - for testing performance.
 - Figma was used to create my wireframes.
 
-
-
-## Testing
 ## Deployment
-## Sources 
+## Known Bugs 
 
+## Citation of all sources(code, images, text)
+## Images 
+
+### Chad Montano 
+https://unsplash.com/photos/eeqbbemH9-c
+
+### Anna Tukhfatullina 
+https://unsplash.com/photos/Mzy-OjtCI70
+
+### Joseph Gonzalez 
+https://unsplash.com/photos/zcUgjyqEwe8
+
+### Victoria Shes  
+https://unsplash.com/photos/UC0HZdUitWY
+
+### Michele Blackwell  
+https://unsplash.com/photos/rAyCBQTH7ws
+
+### Foodiesfeed
+https://www.foodiesfeed.com/free-food-photo/exotic-spices/
+
+### Pixabay
+https://pixabay.com/photos/oyster-bbq-grilled-250876/
+https://pixabay.com/photos/shrimp-oyster-seafood-sea-food-1502724/
+https://pixabay.com/photos/paella-lena-mixed-valencian-1167973/
+https://pixabay.com/photos/salmon-fish-fried-shrimp-scampi-6353898/
+
+# Code 
+
+
+# Text 
+
+### All text was created by myself.
+
+
+# Summary 
