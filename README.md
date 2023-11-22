@@ -24,11 +24,13 @@ Foodworld is a food blog website which allows users explore blogs, recipes, stor
 
 ### User Stories/Goals
 
-- Agile
+**Agile**
+
 This was the first time I practiced agile in the development and planning of my project.
 I created a list of user stories to assist in the development and implementation writing code and building the website. Each user story breaks up the project in to small chunks which can be tackled individually, eventually each on the back of the previous to build a complete working site. With each user story only a part of the site is worked on. With each user story completed, I moved on to the next and would then run in to bugs and errors which would require fixing before moving on.
 
-- Project Goals
+**Project Goals**
+
 1. To create a website that is easy to navigate and use.
 2. To create a website that is visually appealing.
 3. To create a website that is responsive on all devices.
@@ -36,19 +38,22 @@ I created a list of user stories to assist in the development and implementation
 5. To create a website that is fun to use.
 6. To create a website that is easy to use.
 
-- User goals
+**User goals**
+
 1. I want to easily understand the product and whats being offered.
 2. I want to understand the company and thier ethics.
 3. I want to know how .
 4. I want to 
 5. I want to view the website on all different media devices.
   
-- Returning user goals
+**Returning user goals**
+
 1. I want to navigate quickly to get what I came for.
 2. I want to be able to contact the company.
 3. I want to know what other options are available
   
-- Website owner goals
+**Website owner goals**
+
 1. I want to gain as many users as possible.
 2. I want to 
 3. I want to provide as much informitave information as possible to gain peoples interest in our service.
@@ -61,21 +66,53 @@ I created a list of user stories to assist in the development and implementation
 
 The header is showing the website name and logo on the left, and the links to 'Home', 'Register', and 'Login'. On the right it has "The Misadventures of a foodblogger"
 
+<img width="1270" alt="Screenshot 2023-11-21 at 19 59 11" src="https://github.com/dutchmims/Food-World/assets/119881922/eec6072c-2f72-4f1a-a752-ea99d8543910">
+
+
 ## Footer
 
 The footer is showing 5 social media links and the website copyright at the bottom left.
+
+<img width="1262" alt="Screenshot 2023-11-21 at 20 00 47" src="https://github.com/dutchmims/Food-World/assets/119881922/58b2ad0b-24cd-45bf-839a-6d61a3e745dc">
+
 
 ## Homepage
 
 * The home page includes a photograph with text. This lets the viewer know what the website is about and whats coming next. The image is vibrant and inviting. There's a CTA (a blue box with text that say "Get Started") Once clicked on it bring the user down to the "Latest Recipes" section.
 
+<img width="630" alt="Screenshot 2023-11-22 at 20 33 48" src="https://github.com/dutchmims/Food-World/assets/119881922/2630cf6d-30b9-4af2-be12-3b9c7a5431da">
+
+
+<img width="137" alt="Screenshot 2023-11-21 at 19 59 41" src="https://github.com/dutchmims/Food-World/assets/119881922/18d407f6-72f2-4ac5-a6d7-bd9749fda792">
+
+
+<img width="1263" alt="Screenshot 2023-11-21 at 19 59 55" src="https://github.com/dutchmims/Food-World/assets/119881922/06fee7b1-4afd-47b0-8ba6-19c6b6e372e6">
+
+
+<img width="708" alt="Screenshot 2023-11-22 at 20 35 44" src="https://github.com/dutchmims/Food-World/assets/119881922/827e59f5-4dd1-42a1-a765-2bc6a7195db5">
+
+
+<img width="462" alt="Screenshot 2023-11-22 at 20 36 26" src="https://github.com/dutchmims/Food-World/assets/119881922/20580e28-a16c-4233-8b1b-e589cf26729a">
+
+
+
+
 ## Register
 
-* 
+* I used the Django AllAuth for all the authentication on this blog site.  Django AllAut provides HTML pages for signing up and signing in and signing out. I have edited these HTML pages and styled them to show the same style, UX, font and colour palatte that I have chosen for my website.
+  
+<img width="1277" alt="Screenshot 2023-11-22 at 20 20 31" src="https://github.com/dutchmims/Food-World/assets/119881922/7c2692da-7f10-4816-9e8c-dbbcdda45978">
 
 ## Login
 
-* 
+<img width="1276" alt="Screenshot 2023-11-22 at 20 21 09" src="https://github.com/dutchmims/Food-World/assets/119881922/5f71b9d5-2031-4567-b350-63ddec8efa30">
+
+
+## Logout
+
+<img width="1271" alt="Screenshot 2023-11-22 at 20 21 29" src="https://github.com/dutchmims/Food-World/assets/119881922/299ff027-6d6e-45f3-a3dc-7c7c40bb1a5f">
+
+
 
 ### UX/UI  
 - Design
