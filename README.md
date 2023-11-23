@@ -166,18 +166,18 @@ As you can see, the same colour for the CTA button on the Login screen is on the
 
 ### Technologies and Languages Used
 
-- Python is the predominent language used in this project.
+- Python is the predominant language used in this project.
 - HTML as the markup language.
 - CSS The styling has been produced with Cascading Style Sheets.
 - Github for storing the repository during development.
-- Github Projects was utilised for the kanban board.
+- Github projects was used for my issues.
 - Gitpod as a cloud based IDE.
 - Git was used to commit and push code during development.
 - Heroku is where the website is hosted.
 - Favicon was used to produce a favicon for this site.
 - Google Fonts was used for typography.
 - PEP8 Validator was used for validating the python code.
-- W3C HTML Validator wss used for validating the HTML.
+- W3C HTML Validator was used for validating the HTML.
 - Jigsaw CSS Validator was used for validating the CSS.
 - Chrome Dev Tools - for debugging the project.
 - Lighthouse - for testing performance.
@@ -192,9 +192,9 @@ As you can see, the same colour for the CTA button on the Login screen is on the
 - From the source drop down menu, select the Main Branch.
 - After the main branch has been selected, it will be automatically refreshed with the successful deployment.
   
-- Clone the Repository Code Locally
+- Clone the Repository Code Locally.
 - Go to the Github repository you want to clone to use locally.
-- Click on the code drop down menu
+- Click on the code drop down menu.
 - Click on HTTPS.
 - Copy the repository link.
 - Open your IDE.
@@ -226,6 +226,8 @@ As you can see, the same colour for the CTA button on the Login screen is on the
 * https://www.youtube.com/watch?v=rI95wyHD_6k
 * https://getbootstrap.com/docs/5.0/getting-started/introduction/
 * https://www.w3schools.com/bootstrap5/
+![image](https://github.com/dutchmims/Food-World/assets/119881922/25dbb8b2-ed0f-41b1-b83e-41e30dcf5e17)
+
 
 ## Text
 
