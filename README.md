@@ -169,9 +169,9 @@ As you can see, the same colour for the CTA button on the Login screen is on the
 - Python is the predominent language used in this project.
 - HTML as the markup language.
 - CSS The styling has been produced with Cascading Style Sheets.
-- GitHub for storing the repository during development.
-- GitHub Projects was utilised for the kanban board.
-- GitPod as a cloud based IDE.
+- Github for storing the repository during development.
+- Github Projects was utilised for the kanban board.
+- Gitpod as a cloud based IDE.
 - Git was used to commit and push code during development.
 - Heroku is where the website is hosted.
 - Favicon was used to produce a favicon for this site.
@@ -180,7 +180,7 @@ As you can see, the same colour for the CTA button on the Login screen is on the
 - W3C HTML Validator wss used for validating the HTML.
 - Jigsaw CSS Validator was used for validating the CSS.
 - Chrome Dev Tools - for debugging the project.
-- LightHouse - for testing performance.
+- Lighthouse - for testing performance.
 - Figma was used to create my wireframes.
 
 # Deployment
@@ -203,19 +203,15 @@ As you can see, the same colour for the CTA button on the Login screen is on the
   
 ### Heroku
 
-- The project was deployed using Code Institutes mock terminal for Heroku
-- Fork or clone this repository.
-- Ensure the Profile is in place.
-- requirements.txt can be left empty as this project does not use any external libraries
-- Create a new app in Heroku
-- Select "New" and "Create new app"
-- Name the new app and click "Create new app"
-- In "Settings" select "BuildPack" and select Python and Node.js. (Python must be at the top of the list)
-- Whilst still in "Settings", click "Reveal Config Vars" and input the folloing. KEY: PORT, VALUE: 8000. Nothing else is needed here as this project does not have any sensitive files
-- Click on "Deploy" and select your deploy method and repository
+- Create a new app in Heroku.
+- Select new and create new app.
+- Name the new app then click create new app.
+- In settings, select buildpack, then select Python and Node.js. Python must be 1st in the list.
+- In settings, click reveal config vars, then add your KEY, PORT, and VALUE variabiles.
+- Click deploy then select your deploy method and repository.
 - Click "Connect" on selected repository.
-- Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section
-- Heroku will now deploy the site
+- Click deploy branch.
+- Heroku will deploy your site.
 
 # Known Bugs 
 
