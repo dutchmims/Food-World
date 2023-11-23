@@ -184,6 +184,39 @@ As you can see, the same colour for the CTA button on the Login screen is on the
 - Figma was used to create my wireframes.
 
 # Deployment
+
+### Github
+
+- The site was deployed to Github pages.
+- In Github's repository, go to the settings tab.
+- From the source drop down menu, select the Main Branch.
+- After the main branch has been selected, it will be automatically refreshed with the successful deployment.
+  
+- Clone the Repository Code Locally
+- Go to the Github repository you want to clone to use locally.
+- Click on the code drop down menu
+- Click on HTTPS.
+- Copy the repository link.
+- Open your IDE.
+- Type git cloned url in to your IDE terminal.
+- Your project will now be cloned on your local terminal.
+  
+### Heroku
+
+- The project was deployed using Code Institutes mock terminal for Heroku
+- Fork or clone this repository.
+- Ensure the Profile is in place.
+- requirements.txt can be left empty as this project does not use any external libraries
+- Create a new app in Heroku
+- Select "New" and "Create new app"
+- Name the new app and click "Create new app"
+- In "Settings" select "BuildPack" and select Python and Node.js. (Python must be at the top of the list)
+- Whilst still in "Settings", click "Reveal Config Vars" and input the folloing. KEY: PORT, VALUE: 8000. Nothing else is needed here as this project does not have any sensitive files
+- Click on "Deploy" and select your deploy method and repository
+- Click "Connect" on selected repository.
+- Either choose "Enable Automatic Deploys" or "Deploy Branch" in the manual deploy section
+- Heroku will now deploy the site
+
 # Known Bugs 
 
 # Citation of all sources(code, images, text)
@@ -199,6 +232,8 @@ As you can see, the same colour for the CTA button on the Login screen is on the
 * https://www.w3schools.com/bootstrap5/
 
 ## Text
+
+All text has been created by myself.
 
 ## Images 
 
