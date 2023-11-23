@@ -81,24 +81,38 @@ The footer is showing 5 social media links and the website copyright at the bott
 ## Homepage
 
 * The home page includes a photograph with text. This lets the viewer know what the website is about and whats coming next. The image is vibrant and inviting. There's a CTA (a blue box with text that say "Get Started") Once clicked on it bring the user down to the "Latest Recipes" section.
+  
+<img width="1258" alt="Screenshot 2023-11-23 at 20 02 43" src="https://github.com/dutchmims/Food-World/assets/119881922/55d3f692-e31a-4052-b72e-fb7d92ff5ad3">
 
-<img width="630" alt="Screenshot 2023-11-22 at 20 33 48" src="https://github.com/dutchmims/Food-World/assets/119881922/2630cf6d-30b9-4af2-be12-3b9c7a5431da">
+<img width="1237" alt="Screenshot 2023-11-23 at 20 02 59" src="https://github.com/dutchmims/Food-World/assets/119881922/231408a3-2bd7-409a-82a4-6ab5650a5408">
+
+### CTA
+
+The CTA button on the Homepage is a button that brings users down to the "latest Recipes". I used JavaScrpit here to add a scrolling effect once the CTA is clicked.
 
 <img width="137" alt="Screenshot 2023-11-21 at 19 59 41" src="https://github.com/dutchmims/Food-World/assets/119881922/18d407f6-72f2-4ac5-a6d7-bd9749fda792">
 
-<img width="1263" alt="Screenshot 2023-11-21 at 19 59 55" src="https://github.com/dutchmims/Food-World/assets/119881922/06fee7b1-4afd-47b0-8ba6-19c6b6e372e6">
+### Blogs
 
-<img width="708" alt="Screenshot 2023-11-22 at 20 35 44" src="https://github.com/dutchmims/Food-World/assets/119881922/827e59f5-4dd1-42a1-a765-2bc6a7195db5">
+<img width="304" alt="Screenshot 2023-11-23 at 20 03 17" src="https://github.com/dutchmims/Food-World/assets/119881922/6d511acf-14a2-4978-ba12-732aeff0ca09">
 
-<img width="462" alt="Screenshot 2023-11-22 at 20 36 26" src="https://github.com/dutchmims/Food-World/assets/119881922/20580e28-a16c-4233-8b1b-e589cf26729a">
+<img width="303" alt="Screenshot 2023-11-23 at 20 03 37" src="https://github.com/dutchmims/Food-World/assets/119881922/2d4f7346-9e53-4cb9-930d-f41af89803cb">
+
+<img width="299" alt="Screenshot 2023-11-23 at 20 04 09" src="https://github.com/dutchmims/Food-World/assets/119881922/ea2c684c-bbb5-42d3-9bbd-3520b2be6754">
+
+<img width="304" alt="Screenshot 2023-11-23 at 20 03 27" src="https://github.com/dutchmims/Food-World/assets/119881922/e131b930-b672-4987-8eb2-6baa8c644060">
+
+<img width="300" alt="Screenshot 2023-11-23 at 20 04 01" src="https://github.com/dutchmims/Food-World/assets/119881922/9ae501ee-95e5-49ab-b10f-34454179222c">
 
 ## Register
 
-* I used the Django AllAuth for all the authentication on this blog site.  Django AllAut provides HTML pages for signing up and signing in and signing out. I have edited these HTML pages and styled them to show the same style, UX, font and colour palatte that I have chosen for my website.
+* I used the Django AllAuth for all the authentication on this blog site.  Django AllAut provides HTML pages for signing up and signing in and signing out. I have edited these HTML pages and styled them to show the same style, UX, font and colour palatte that I have chosen for my website as a whole.
   
 <img width="1277" alt="Screenshot 2023-11-22 at 20 20 31" src="https://github.com/dutchmims/Food-World/assets/119881922/7c2692da-7f10-4816-9e8c-dbbcdda45978">
 
 ## Login
+
+As you can see, the same colour for the CTA button on the Login screen is on the Homepage.
 
 <img width="1276" alt="Screenshot 2023-11-22 at 20 21 09" src="https://github.com/dutchmims/Food-World/assets/119881922/5f71b9d5-2031-4567-b350-63ddec8efa30">
 
@@ -107,12 +121,40 @@ The footer is showing 5 social media links and the website copyright at the bott
 <img width="1271" alt="Screenshot 2023-11-22 at 20 21 29" src="https://github.com/dutchmims/Food-World/assets/119881922/299ff027-6d6e-45f3-a3dc-7c7c40bb1a5f">
 
 # UX/UI  
-- Design
-  - Main colours used
-   - Font colour
-   - Font used
+
+## Design
+
+### Main colours used
+    
+  <img width="477" alt="Screenshot 2023-11-23 at 20 51 15" src="https://github.com/dutchmims/Food-World/assets/119881922/213540f2-a2ae-4fdb-be75-bf20ba42d4a8">
+ 
+  <img width="475" alt="Screenshot 2023-11-23 at 20 30 01" src="https://github.com/dutchmims/Food-World/assets/119881922/d3050fd3-6e9d-4f19-b71b-d7b4294a4730">
+
+  <img width="479" alt="Screenshot 2023-11-23 at 20 51 39" src="https://github.com/dutchmims/Food-World/assets/119881922/9eeb3cec-e414-44bd-b6e5-9bad3e677a8c">
+
+  <img width="478" alt="Screenshot 2023-11-23 at 20 52 15" src="https://github.com/dutchmims/Food-World/assets/119881922/faf17a44-ebf6-42ce-9da0-2d7bfc40073d">
+    
+  <img width="476" alt="Screenshot 2023-11-23 at 20 52 41" src="https://github.com/dutchmims/Food-World/assets/119881922/28cd23bc-991a-49a0-af11-2197d144c6f5">
+
+
+### Font colour
+   
+  <img width="475" alt="Screenshot 2023-11-23 at 20 30 01" src="https://github.com/dutchmims/Food-World/assets/119881922/6f2cefaa-0aa9-4f15-a715-d51faa752c01">
+     
+  <img width="478" alt="Screenshot 2023-11-23 at 20 37 31" src="https://github.com/dutchmims/Food-World/assets/119881922/f6d8726a-3388-4211-bee2-bd8b84dbe478">
+      
+  <img width="476" alt="Screenshot 2023-11-23 at 20 36 09" src="https://github.com/dutchmims/Food-World/assets/119881922/535e2578-c051-4bf0-aae9-f7ab979e7a69">
+      
+  <img width="478" alt="Screenshot 2023-11-23 at 20 36 39" src="https://github.com/dutchmims/Food-World/assets/119881922/31de6871-99e1-41b7-b096-9e95217fb403">
+
+
+### Fonts used
+     
+  - **Pacifico**
+  - **Roboto**
+  - **Lato**
   
-- Wireframe design 
+### Wireframe design 
 
 <img width="325" alt="Screenshot 2023-11-08 at 20 03 21" src="https://github.com/dutchmims/Food-World/assets/119881922/526bafca-1522-4a02-a6d3-f030b214b7da">
 
@@ -122,7 +164,7 @@ The footer is showing 5 social media links and the website copyright at the bott
 
 # Testing
 
-# Technologies and Languages Used
+### Technologies and Languages Used
 
 - Python is the predominent language used in this project.
 - HTML as the markup language.
