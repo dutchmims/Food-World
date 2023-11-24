@@ -204,6 +204,11 @@ For the Logout screen and particularly the Sign Out button, I used the same red 
 
 <img width="1276" alt="Screenshot 2023-11-24 at 22 25 24" src="https://github.com/dutchmims/Food-World/assets/119881922/7b498d1c-9e98-4eb0-8d4e-75004eafa7c7">
 
+# User Testing
+My project was tested on macbook using the Google Chrome, Mozilla Firefox and Safari.
+It was also tested on an IPhone and a IPad. 
+I had no issues using it on any browser or any device.
+
 ### Technologies and Languages Used
 
 * Python is the predominant language used in this project.
