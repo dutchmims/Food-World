@@ -14,7 +14,7 @@
 5. Testing 
 6. Technologies Used
 7. Deployment
-8. Known Bugs 
+8. Bugs 
 9. Citation of all sources(code, images, text)
 
 
@@ -118,6 +118,8 @@ As you can see, the same colour for the CTA button on the Login screen is on the
 
 ## Logout
 
+For the Logout screen and particularly the Sign Out button, I used the same red colour as I did for the brand name of the site "Foodworld". I wanted to differentiate between the colours of the CTA and the Sign Up and Sign In button. Also once on the Sign Out button there's a little animation and the colour becomes more intense to highlight the fact that you are on the button and about to Sign Out.
+
 <img width="1271" alt="Screenshot 2023-11-22 at 20 21 29" src="https://github.com/dutchmims/Food-World/assets/119881922/299ff027-6d6e-45f3-a3dc-7c7c40bb1a5f">
 
 # UX/UI  
@@ -151,8 +153,14 @@ As you can see, the same colour for the CTA button on the Login screen is on the
 ### Fonts used
      
   - **Pacifico**
+    I used Pacifico because it has a nice, jovial feel to it. It's not too serious and lets the user know the site and the brand is friendly and easy going.
+    
   - **Roboto**
+    I used Rototo because it has a dual nature. It has a mechanical skeleton and the forms are largely geometric. At the same time, the font features friendly        and open curves. 
+    
   - **Lato**
+    I used Lato because it's serious but friendly. It is a humanist sans-serif typeface and pairs well with Robot.
+    
   
 ### Wireframe design 
 
@@ -162,72 +170,115 @@ As you can see, the same colour for the CTA button on the Login screen is on the
 
 <img width="99" alt="Screenshot 2023-11-08 at 20 03 52" src="https://github.com/dutchmims/Food-World/assets/119881922/d1f7168e-9d86-4375-a11d-09933bff6b8f">
 
+
 # Testing
+
+### Lighthouse
+
+- Desktop
+  
+  <img width="429" alt="Screenshot 2023-11-23 at 22 35 38" src="https://github.com/dutchmims/Food-World/assets/119881922/8f96a36f-d9d4-41e2-ab81-927ed08d17bc">
+
+- Mobile
+  
+  <img width="433" alt="Screenshot 2023-11-23 at 22 37 46" src="https://github.com/dutchmims/Food-World/assets/119881922/bf025433-4709-4113-b943-003a83641e25">
+
+  
+### CI Python Linter
+
+- No errors were found testing with the CI code linter
+
+### W3C Validator 
+
+- These errors were found. Unfortunately I did not have enough time to figure out how to correct them.
+
+<img width="1200" alt="Screenshot 2023-11-24 at 22 25 41" src="https://github.com/dutchmims/Food-World/assets/119881922/326549ec-16f6-4b20-81fc-db259797436a">
+
+<img width="1201" alt="Screenshot 2023-11-24 at 22 25 50" src="https://github.com/dutchmims/Food-World/assets/119881922/5bac07d0-2d0b-4ecd-9c10-63ce54551f5b">
+
+<img width="1198" alt="Screenshot 2023-11-24 at 22 26 12" src="https://github.com/dutchmims/Food-World/assets/119881922/8132150c-0426-41a5-af70-5e1d4b4ef5c9">
+
+### Jigsaw Validator 
+
+- No errors were found with The W3C CSS Validation Service
+
+<img width="1276" alt="Screenshot 2023-11-24 at 22 25 24" src="https://github.com/dutchmims/Food-World/assets/119881922/7b498d1c-9e98-4eb0-8d4e-75004eafa7c7">
 
 ### Technologies and Languages Used
 
-- Python is the predominant language used in this project.
-- HTML as the markup language.
-- CSS The styling has been produced with Cascading Style Sheets.
-- Github for storing the repository during development.
-- Github projects was used for my issues.
-- Gitpod as a cloud based IDE.
-- Git was used to commit and push code during development.
-- Heroku is where the website is hosted.
-- Favicon was used to produce a favicon for this site.
-- Google Fonts was used for typography.
-- PEP8 Validator was used for validating the python code.
-- W3C HTML Validator was used for validating the HTML.
-- Jigsaw CSS Validator was used for validating the CSS.
-- Chrome Dev Tools - for debugging the project.
-- Lighthouse - for testing performance.
-- Figma was used to create my wireframes.
+* Python is the predominant language used in this project.
+* HTML as the markup language.
+* CSS The styling has been produced with Cascading Style Sheets.
+* Django was used for building my web applications.
+* Bootstrap was used for creating, style, grid system, buttons and the responsive design.
+* Github for storing the repository during development.
+* Github projects was used for my issues.
+* Gitpod as a cloud based IDE.
+* Git was used to commit and push code during development.
+* Heroku is where the website is hosted.
+* Favicon was used to produce a favicon for this site.
+* Google Fonts was used for typography.
+* CI Linter was used for validating my python code.
+* W3C HTML Validator was used for validating my HTML.
+* Jigsaw CSS Validator was used for validating my CSS.
+* Chrome Dev Tools - for debugging the project.
+* Lighthouse - for testing performance.
+* Figma was used to create my wireframes.
 
 # Deployment
 
 ### Github
 
-- The site was deployed to Github pages.
-- In Github's repository, go to the settings tab.
-- From the source drop down menu, select the Main Branch.
-- After the main branch has been selected, it will be automatically refreshed with the successful deployment.
+* The site was deployed to Github pages.
+* In Github's repository, go to the settings tab.
+* From the source drop down menu, select the Main Branch.
+* After the main branch has been selected, it will be automatically refreshed with the successful deployment.
   
-- Clone the Repository Code Locally.
-- Go to the Github repository you want to clone to use locally.
-- Click on the code drop down menu.
-- Click on HTTPS.
-- Copy the repository link.
-- Open your IDE.
-- Type git cloned url in to your IDE terminal.
-- Your project will now be cloned on your local terminal.
+* Clone the Repository Code Locally.
+* Go to the Github repository you want to clone to use locally.
+* Click on the code drop down menu.
+* Click on HTTPS.
+* Copy the repository link.
+* Open your IDE.
+* Type git cloned url in to your IDE terminal.
+* Your project will now be cloned on your local terminal.
   
 ### Heroku
 
-- Create a new app in Heroku.
-- Select new and create new app.
-- Name the new app then click create new app.
-- In settings, select buildpack, then select Python and Node.js. Python must be 1st in the list.
-- In settings, click reveal config vars, then add your KEY, PORT, and VALUE variabiles.
-- Click deploy then select your deploy method and repository.
-- Click "Connect" on selected repository.
-- Click deploy branch.
-- Heroku will deploy your site.
+* Create a new app in Heroku.
+* Select new and create new app.
+* Name the new app then click create new app.
+* In settings, select buildpack, then select Python and Node.js. Python must be 1st in the list.
+* In settings, click reveal config vars, then add your KEY, PORT, and VALUE variabiles.
+* Click deploy then select your deploy method and repository.
+* Click "Connect" on selected repository.
+* Click deploy branch.
+* Heroku will deploy your site.
 
-# Known Bugs 
+# Bugs
+
+* I had many bugs while writing this project.
+* I got bugs when I created my custom Model and hand several issues. This was resolved after using several sources, including youtube tutorials,              codemy.com, w3schools.com and perplexity.
+* I also faced issues with "likes" which initially worked and then one day stopped working. 
+
 
 # Citation of all sources(code, images, text)
 
 ## Code
 * I used the Code Institutes blog code as a base for my project.
 * I utilised many online sources to help me create my project.
-* I used Code Institute Slack groups for help and advice for my project. 
+* I used Code Institute Slack groups for help and advice for my project.
+  
+* I watched and used the below websites, tutorials and advice.
 * https://www.w3schools.com/django/django_models.php
 * https://www.youtube.com/watch?v=5zNR3E6WRLE
 * https://www.youtube.com/watch?v=rI95wyHD_6k
 * https://getbootstrap.com/docs/5.0/getting-started/introduction/
-* https://www.w3schools.com/bootstrap5/
-![image](https://github.com/dutchmims/Food-World/assets/119881922/25dbb8b2-ed0f-41b1-b83e-41e30dcf5e17)
-
+* https://www.w3schools.com/bootstrap5
+* https://www.youtube.com/watch?v=MG9itGX1hD0
+* https://www.w3schools.com/django/
+* https://www.youtube.com/watch?v=B40bteAMM_M
+* https://www.perplexity.ai/
 
 ## Text
 
