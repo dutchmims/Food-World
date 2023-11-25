@@ -315,5 +315,3 @@ https://pixabay.com/photos/shrimp-oyster-seafood-sea-food-1502724/
 https://pixabay.com/photos/paella-lena-mixed-valencian-1167973/
 https://pixabay.com/photos/salmon-fish-fried-shrimp-scampi-6353898/
 
-
-# Summary 
